@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart' as Foundation;
 
 void main() {
+  if (Foundation.kReleaseMode){ // is Release Mode ??
+    print('release mode');
+  } else {
+    print('debug mode');
+  }
   runApp(MyApp());
 }
 
@@ -57,7 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
-        child: Icon(Icons.add),
+        child: Icon(Icons.add,),
       ),
     );
   }
