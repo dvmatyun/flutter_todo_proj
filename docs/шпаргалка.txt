@@ -18,3 +18,11 @@
 - subject.distinct (если значение нового элемента отличается от последнего)
 - subject.asyncMap
 - subject.close() == streamController.dispose()
+
+2. SOLID:
+    -Single Responsibility Principle:
+    класс выполняет какую то одну функцию. 
+    Репозиторий - ходит к API, Валидатор - проверяет, StateManager - управляет состояниями, View - эмитит ивенты.
+    
+    -Opened/Closed Principle:
+    
