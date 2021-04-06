@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart' as Foundation;
+import 'package:flutter/foundation.dart' as foundations;
 import 'package:fluttertodoproj/common/common_managers/interfaces/ilogin_manager.dart';
 import 'package:fluttertodoproj/common/common_managers/managers/user_manager.dart';
 import 'package:fluttertodoproj/http/user_related/fake_user_rest_client.dart';
@@ -8,7 +8,7 @@ import 'package:fluttertodoproj/pages/login/page_login.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  if (Foundation.kReleaseMode){ // is Release Mode ??
+  if (foundations.kReleaseMode){ // is Release Mode ??
     print('release mode');
   } else {
     print('debug mode');
