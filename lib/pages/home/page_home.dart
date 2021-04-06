@@ -54,10 +54,7 @@ class _PageHomeState extends State<PageHome> {
               children: [
                 SizedBox(width: 200,),
                 TextButton(
-                    onPressed: (){
-                      //Logout action here:
-                      Navigator.pushNamed(context, '',);
-                    },
+                    onPressed: () => _loginBLoC?.add(LogoutEvent()),
                     child: Text('Logout')
                 ),
               ],
