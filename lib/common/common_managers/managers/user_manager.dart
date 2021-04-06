@@ -5,20 +5,25 @@ import 'package:fluttertodoproj/common/models/user_related/exception_login.dart'
 import 'package:fluttertodoproj/common/models/user_related/user_base.dart';
 import 'package:fluttertodoproj/http/user_related/iuser_rest_client.dart';
 
+
+///User manager used for login/logout and get current user's info
 class UserManager implements ILoginManager{
 
-  final IUserRestClient userRestClient;
+  final IUserRestClient _userRestClient;
 
-  UserManager(this.userRestClient);
+  ///Default constructor
+  UserManager(IUserRestClient userRestClient)
+      :_userRestClient = userRestClient;
 
   UserBase? _lastuser;
 
   Future<UserBase> login(String username, String password) async {
     try {
-      var user = await userRestClient.postLogin(username, password);
+      var user = await _userRestClient.postLogin(username, password);
       _lastuser = user;
       _loginSc.add(true);
       return getLoggedUser();
+    // ignore: avoid_catches_without_on_clauses
     } catch (e){
       //could be different reasons (may develop further):
       throw LoginException("Login failed");

@@ -1,5 +1,8 @@
+
+
 import 'package:fluttertodoproj/common/models/user_related/user_base.dart';
 
+///User entity
 class User implements UserBase {
   String username;
   String password;
@@ -7,7 +10,9 @@ class User implements UserBase {
   String lastName;
   String patronic;
 
-  User({required this.username, this.password = '', this.firstName = '', this.lastName = '', this.patronic = ''});
+  ///default constr
+  User({required this.username, this.password = '',
+    this.firstName = '', this.lastName = '', this.patronic = ''});
 
   String getFio(){
     return '$lastName $firstName $patronic';

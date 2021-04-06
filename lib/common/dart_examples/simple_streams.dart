@@ -1,5 +1,5 @@
 import 'dart:async';
-
+///Test class, no review
 //dart.dev func:
 Future<int> sumStream(Stream<int> stream) async {
   var sum = 0;
@@ -8,19 +8,20 @@ Future<int> sumStream(Stream<int> stream) async {
   }
   return sum;
 }
-
+///Test class, no review
 //Single-subscription stream
 Stream<int> simpleGenerator(int maxValue) async* {
-  for (int i = 0; i < maxValue; i++){
+  for (var i = 0; i < maxValue; i++){
     yield i;
     print("yielded i=$i");
   }
 }
-
+///Test class, no review
 class MyControllerClass extends Stream<int> implements Sink<int> {
-  List<int> _cachedValues = <int>[];
-
-  StreamController<int> _myController = StreamController<int>.broadcast();
+  ///Test
+  final List<int> _cachedValues = <int>[];
+  ///Test
+  final StreamController<int> _myController = StreamController<int>.broadcast();
 
   Stream<int> get _myStream async* {
     for (final val in _cachedValues) {
@@ -55,7 +56,7 @@ class MyControllerClass extends Stream<int> implements Sink<int> {
         cancelOnError: cancelOnError,
       );
 }
-
+///Test
 Future<void> runStreamExamp() async {
   var controllerClass = MyControllerClass()..add(1)..add(2)..add(3);
   print('controllerClass');
